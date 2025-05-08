@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_account_tax_form_custom" model="ir.ui.view">
+        <field name="name">profit.and.loss.preview</field>
+        <field name="model">financial.report</field>
+        <field name="inherit_id" ref="base_accounting_kit.financial_report_wiz_modified"/>
+        <field name="arch" type="xml">
+            <group>
+                <xpath expr="//footer/button[@name='view_report_pdf']" position="after">
+                    <button string="Preview" name="preview_profit_and_loss" type="object" class="btn-primary"/>
+                </xpath>
+            </group>
+        </field>
+    </record>
+</odoo>

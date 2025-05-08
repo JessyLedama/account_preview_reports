@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_cash_flow_preview_line_tree" model="ir.ui.view">
+        <field name="name">cash.flow.preview.line.tree</field>
+        <field name="model">cash.flow.preview.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence"/>
+                <field name="name"/>
+                <field name="amount"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
