@@ -5,11 +5,11 @@
         <field name="model">financial.report</field>
         <field name="inherit_id" ref="base_accounting_kit.financial_report_wiz_modified"/>
         <field name="arch" type="xml">
-            <group>
+            <footer>
                 <xpath expr="//footer/button[@name='view_report_pdf']" position="after">
                     <button string="Preview" name="preview_profit_and_loss" type="object" class="btn-primary"/>
                 </xpath>
-            </group>
+            </footer>
         </field>
     </record>
 </odoo>
