@@ -10,10 +10,11 @@
         'security/ir.model.access.csv',
 
         'views/profit_and_loss.xml',
-        'views/profit_and_loss.xml',
+        'views/bank_book_preview.xml',
 
         'wizards/profit_and_loss.xml',
         'wizards/cash_flow_statement_wizard.xml',
+        'wizards/bank_book.xml',
     ],
     'installable': True,
     'application': True,

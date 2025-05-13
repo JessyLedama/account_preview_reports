@@ -8,30 +8,27 @@ class CashFlowReportWizard(models.TransientModel):
     preview_line_ids = fields.One2many('cash.flow.preview.line', 'report_id', string="Preview Lines")
 
     def action_preview(self):
-        # Clear previous lines
         self.preview_line_ids.unlink()
 
-        data = {'form': self.read([
-            'account_report_id', 'date_from_cmp', 'date_to_cmp',
-            'journal_ids', 'filter_cmp', 'target_move',
-            'date_from', 'date_to', 'company_id',
-            'enable_filter', 'debit_credit', 'label_filter'
-        ])[0]}
+        options = self._get_options(previous_options=None)
+        options['comparison'] = self.enable_filter and {
+            'filter': self.filter_cmp,
+            'date_from': self.date_from_cmp,
+            'date_to': self.date_to_cmp,
+            'label': self.label_filter
+        } or {}
 
-        comparison_context = self._build_comparison_context(data)
-        data['form']['comparison_context'] = comparison_context
-
-        used_context = self._build_contexts(data)
-        data['form']['used_context'] = dict(used_context)
-
-        # Use the logic from your report method (get_account_lines or similar)
-        report_lines = self.env['account.financial.report'].browse(data['form']['account_report_id']).get_account_lines(data['form'])
+        # Ensure proper context (if needed)
+        report_lines = self._get_lines(options)
 
         for line in report_lines:
+            if line.get('level') == 0:  # Skip headers/groups if needed
+                continue
+
             self.env['cash.flow.preview.line'].create({
                 'report_id': self.id,
                 'name': line.get('name'),
-                'amount': line.get('balance'),
+                'amount': line.get('columns')[0].get('no_format_name') if line.get('columns') else 0.0,
                 'sequence': line.get('sequence', 0),
             })
 

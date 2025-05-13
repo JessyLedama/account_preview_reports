@@ -3,3 +3,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_financial_report,access_financial_report,model_financial_report,base.group_user,1,1,1,1
 
 access_profit_and_loss,access_profit_and_loss,model_profit_and_loss,base.group_user,1,1,1,1
+
+access_cash_flow_report,access_cash_flow_report,model_cash_flow_preview_line,base.group_user,1,1,1,1
+
+access_bank_book_preview_line,access_bank_book_preview_line,model_bank_book_preview_line,base.group_user,1,1,1,1
