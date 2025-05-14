@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_aged_partner_preview_line_tree" model="ir.ui.view">
+        <field name="name">aged.partner.preview.line.tree</field>
+        <field name="model">aged.partner.preview.line</field>
+        <field name="arch" type="xml">
+            <tree string="Aged Partner Preview">
+                <field name="name"/>
+                <field name="not_due"/>
+                <field name="period_5"/>
+                <field name="period_4"/>
+                <field name="period_3"/>
+                <field name="period_2"/>
+                <field name="period_1"/>
+                <field name="total"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

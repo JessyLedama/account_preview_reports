@@ -3,3 +3,4 @@ from . import cash_flow_wizard
 from . import bank_book
 from . import cash_book
 from . import day_book
+from . import aged_partner

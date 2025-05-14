@@ -11,3 +11,5 @@ access_bank_book_preview_line,access_cash_book_preview_line,model_bank_book_prev
 access_cash_book_preview_line,access_cash_book_preview_line,model_cash_book_preview_line,base.group_user,1,1,1,1
 
 access_day_book_preview_line,access_day_book_preview_line,model_day_book_preview_line,base.group_user,1,1,1,1
+
+access_aged_partner_preview_line,access_aged_partner_preview_line,model_aged_partner_preview_line,base.group_user,1,1,1,1
