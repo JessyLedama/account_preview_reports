@@ -1,10 +1,6 @@
 from odoo import models
-from datetime import datetime, date
-import logging
+from datetime import datetime, date, timedelta
 from odoo.exceptions import UserError
-
-
-_logger = logging.getLogger(__name__)
 
 
 class DayBookPreviewReport(models.TransientModel):
@@ -13,58 +9,35 @@ class DayBookPreviewReport(models.TransientModel):
     def preview_day_book(self):
         self.ensure_one()
 
-        # Clear only current user's preview lines to avoid conflicts
+        # Clear old preview lines created by this user
         self.env['day.book.preview.line'].search([('create_uid', '=', self.env.uid)]).unlink()
 
-        # Get start and end dates from wizard
-        start_date = self.date_from
-        end_date = self.date_to
+        if not self.journal_ids:
+            raise UserError("Please select at least one Journal to preview the Day Book.")
 
-        if not self.account_ids or not self.journal_ids:
-            raise UserError("Please select at least one Account and one Journal to generate the report.")
-
-        # Get the move lines data
-        accounts = self.account_ids
-
+        accounts = self.account_ids or self.env['account.account'].search([])
         form_data = {
-            'target_move': self.target_move,          
-            'journal_ids': self.journal_ids.ids,     
-            'date_from': self.date_from,               
-            'date_to': self.date_to,                   
+            'target_move': self.target_move,
+            'journal_ids': self.journal_ids.ids,
+            'date_from': self.date_from,
+            'date_to': self.date_to,
         }
 
+        # Loop through each day between date_from and date_to
+        start_date = self.date_from
+        end_date = self.date_to
+        date_range = [start_date + timedelta(days=i) for i in range((end_date - start_date).days + 1)]
 
-        move_line_groups = self.env['report.base_accounting_kit.day_book_report_template']._get_account_move_entry(
-            accounts,
-            form_data,
-            None
-        )
+        for pass_date in date_range:
+            result = self.env['report.base_accounting_kit.day_book_report_template']._get_account_move_entry(
+                accounts, form_data, str(pass_date)
+            )
 
-        # Loop through each account group
-        for group in move_line_groups.get('lines', []):
-            account_id = group.get("account_id") or (accounts.ids[0] if accounts else None)
-
-            for line in group.get("move_lines", []):
-                
-                ldate_raw = line.get('ldate')
-                ldate = None
-                if ldate_raw:
-                    try:
-                        ldate = (
-                            ldate_raw if isinstance(ldate_raw, date)
-                            else datetime.strptime(ldate_raw, "%Y-%m-%d").date()
-                        )
-                    except ValueError:
-                        _logger.warning("Invalid date format found in line: %s", line)
-                        continue  # Skip this line if date is invalid
-
-                # Skip line if ldate is outside selected range
-                if (start_date and ldate and ldate < start_date) or (end_date and ldate and ldate > end_date):
-                    continue
-
+            for line in result.get('lines', []):
                 self.env['day.book.preview.line'].create({
-                    'account_id': account_id,
-                    'ldate': ldate,
+                    'wizard_id': self.id,
+                    'account_id': line.get('account_id'),
+                    'ldate': line.get('ldate'),
                     'lcode': line.get('lcode'),
                     'lname': line.get('lname'),
                     'lref': line.get('lref'),
@@ -79,6 +52,6 @@ class DayBookPreviewReport(models.TransientModel):
             'type': 'ir.actions.act_window',
             'res_model': 'day.book.preview.line',
             'view_mode': 'tree',
-            'domain': [('create_uid', '=', self.env.uid)],
+            'domain': [('wizard_id', '=', self.id)],
             'target': 'new',
         }
