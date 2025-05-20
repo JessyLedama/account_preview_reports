@@ -17,3 +17,5 @@ access_aged_partner_preview_line,access_aged_partner_preview_line,model_aged_par
 access_partner_ledger_preview_line,access_partner_ledger_preview_line,model_partner_ledger_preview_line,base.group_user,1,1,1,1
 
 access_general_ledger_preview_line,access_general_ledger_preview_line,model_general_ledger_preview_line,base.group_user,1,1,1,1
+
+access_trial_balance_preview_line,access_trial_balance_preview_line,model_trial_balance_preview_line,base.group_user,1,1,1,1

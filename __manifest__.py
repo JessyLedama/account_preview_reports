@@ -16,6 +16,7 @@
         'views/aged_partner.xml',
         'views/partner_ledger.xml',
         'views/general_ledger.xml',
+        'views/trial_balance.xml',
 
         'wizards/profit_and_loss.xml',
         'wizards/cash_flow_statement_wizard.xml',
@@ -25,6 +26,7 @@
         'wizards/aged_partner.xml',
         'wizards/partner_ledger.xml',
         'wizards/general_ledger.xml',
+        'wizards/trial_balance.xml',
     ],
     'installable': True,
     'application': True,
