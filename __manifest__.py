@@ -18,6 +18,7 @@
         'views/general_ledger.xml',
         'views/trial_balance.xml',
         'views/tax_report.xml',
+        'views/journal_audit.xml',
 
         'wizards/profit_and_loss.xml',
         'wizards/cash_flow_statement_wizard.xml',
@@ -29,6 +30,7 @@
         'wizards/general_ledger.xml',
         'wizards/trial_balance.xml',
         'wizards/tax_report.xml',
+        'wizards/journal_audit.xml',
     ],
     'installable': True,
     'application': True,

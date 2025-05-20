@@ -1,13 +1,19 @@
 <odoo>
-    <record id="view_tax_report_preview_line_tree" model="ir.ui.view">
-        <field name="name">tax.report.preview.line.tree</field>
-        <field name="model">tax.report.preview.line</field>
+    <record id="view_journal_audit_preview_line_tree" model="ir.ui.view">
+        <field name="name">journal.audit.preview.line.tree</field>
+        <field name="model">journal.audit.preview.line</field>
         <field name="arch" type="xml">
-            <tree string="Tax Report Preview">
-                <field name="type"/>
-                <field name="name"/>
-                <field name="net"/>
-                <field name="tax"/>
+            <tree string="Journal Audit Preview">
+                <field name="journal_id"/>
+                <field name="move_name"/>
+                <field name="date"/>
+                <field name="account_code"/>
+                <field name="partner_name"/>
+                <field name="label"/>
+                <field name="debit"/>
+                <field name="credit"/>
+                <field name="currency_amount" groups="base.group_multi_currency"/>
+                <field name="currency_id" invisible="1"/>
             </tree>
         </field>
     </record>
