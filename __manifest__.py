@@ -17,6 +17,7 @@
         'views/partner_ledger.xml',
         'views/general_ledger.xml',
         'views/trial_balance.xml',
+        'views/tax_report.xml',
 
         'wizards/profit_and_loss.xml',
         'wizards/cash_flow_statement_wizard.xml',
@@ -27,6 +28,7 @@
         'wizards/partner_ledger.xml',
         'wizards/general_ledger.xml',
         'wizards/trial_balance.xml',
+        'wizards/tax_report.xml',
     ],
     'installable': True,
     'application': True,

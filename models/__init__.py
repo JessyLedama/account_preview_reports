@@ -7,3 +7,4 @@ from . import aged_partner
 from . import partner_ledger
 from . import general_ledger
 from . import trial_balance
+from . import tax_report

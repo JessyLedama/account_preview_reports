@@ -1,0 +1,15 @@
+<odoo>
+    <record id="view_tax_report_form_custom" model="ir.ui.view">
+        <field name="name">tax.report.preview</field>
+        <field name="model">kit.account.tax.report</field>
+        <field name="inherit_id" ref="base_accounting_kit.accounting_tax_report_view"/>
+        <field name="arch" type="xml">
+            <footer>
+                <xpath expr="//button[@name='check_report']" position="before">
+                    <button string="Preview" name="preview_tax_report" type="object" class="btn-primary"/>
+                </xpath>
+            </footer>
+        </field>
+    </record>
+</odoo>
+
