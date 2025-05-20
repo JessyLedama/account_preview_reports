@@ -4,3 +4,4 @@ from . import bank_book_preview_line
 from . import cash_book_preview_line
 from . import day_book_preview_line
 from . import aged_partner
+from . import partner_ledger

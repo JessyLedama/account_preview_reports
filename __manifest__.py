@@ -14,6 +14,7 @@
         'views/cash_book_preview.xml',
         'views/day_book_preview.xml',
         'views/aged_partner.xml',
+        'views/partner_ledger.xml',
 
         'wizards/profit_and_loss.xml',
         'wizards/cash_flow_statement_wizard.xml',
@@ -21,6 +22,7 @@
         'wizards/cash_book.xml',
         'wizards/day_book.xml',
         'wizards/aged_partner.xml',
+        'wizards/partner_ledger.xml',
     ],
     'installable': True,
     'application': True,
