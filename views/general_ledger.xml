@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_general_ledger_preview_line_tree" model="ir.ui.view">
+        <field name="name">general.ledger.preview.line.tree</field>
+        <field name="model">general.ledger.preview.line</field>
+        <field name="arch" type="xml">
+            <tree string="General Ledger Preview">
+                <field name="account_code"/>
+                <field name="account_name"/>
+                <field name="ldate"/>
+                <field name="lcode"/>
+                <field name="partner_name"/>
+                <field name="lref"/>
+                <field name="move_name"/>
+                <field name="lname"/>
+                <field name="debit"/>
+                <field name="credit"/>
+                <field name="balance"/>
+                <!-- <field name="currency_code"/> -->
+                <!-- <field name="currency_amount"/> -->
+            </tree>
+        </field>
+    </record>
+</odoo>
