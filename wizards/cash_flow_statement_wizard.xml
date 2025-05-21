@@ -5,11 +5,11 @@
         <field name="model">cash.flow.report</field>
         <field name="inherit_id" ref="base_accounting_kit.cash_flow_report_view"/>
         <field name="arch" type="xml">
-            <group>
-                <xpath expr="//notebook/page[@name='comparison']" position="after">
+            <footer>
+                <xpath expr="//button[@name='check_report']" position="before">
                     <button string="Preview" name="action_preview" type="object" class="btn-primary"/>
                 </xpath>
-            </group>
+            </footer>
         </field>
     </record>
 </odoo>

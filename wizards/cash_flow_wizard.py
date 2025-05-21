@@ -1,14 +1,21 @@
 from odoo import api, fields, models
 from odoo.tools.misc import get_lang
+from odoo.exceptions import UserError
 
 
 class CashFlowReportWizard(models.TransientModel):
     _inherit = 'cash.flow.report'
 
-    preview_line_ids = fields.One2many('cash.flow.preview.line', 'report_id', string="Preview Lines")
+    # preview_line_ids = fields.One2many('cash.flow.preview.line', 'report_id', string="Preview Lines")
 
     def action_preview(self):
-        self.preview_line_ids.unlink()
+        self.ensure_one()
+
+        # self.preview_line_ids.unlink()
+        self.env['cash.flow.preview.line'].search([('create_uid', '=', self.env.uid)]).unlink()
+
+        if self.date_from:
+            raise UserError("You must define a Start Date.")
 
         options = self._get_options(previous_options=None)
         options['comparison'] = self.enable_filter and {
