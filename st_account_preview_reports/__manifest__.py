@@ -1,5 +1,5 @@
 {
-    'name': 'Account Preview Reports',
+    'name': 'Accounting Preview Reports',
     'version': '1.0',
     'category': 'Accounting',
     'summary': 'Adds Preview to Accounting Reports',
