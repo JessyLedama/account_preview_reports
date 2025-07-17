@@ -36,4 +36,5 @@
     'application': True,
 
     'images': ['static/description/images/icon.png'],
+    'license': 'LGPL-3',
 }
