@@ -1,0 +1,15 @@
+<odoo>
+    <record id="view_journal_audit_form_custom" model="ir.ui.view">
+        <field name="name">journal.audit.preview</field>
+        <field name="model">account.print.journal</field>
+        <field name="inherit_id" ref="base_accounting_kit.account_report_print_journal_view"/>
+        <field name="arch" type="xml">
+            <footer>
+                <xpath expr="//button[@name='check_report']" position="before">
+                    <button string="Preview" name="preview_journal_audit" type="object" class="btn-primary"/>
+                </xpath>
+            </footer>
+        </field>
+    </record>
+</odoo>
+

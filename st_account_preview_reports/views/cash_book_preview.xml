@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_cash_book_preview_line_tree" model="ir.ui.view">
+        <field name="name">cash.book.preview.line.tree</field>
+        <field name="model">cash.book.preview.line</field>
+        <field name="arch" type="xml">
+            <tree string="Cash Book Preview">
+                <field name="ldate"/>
+                <field name="lcode"/>
+                <field name="lname"/>
+                <field name="lref"/>
+                <field name="partner_name"/>
+                <field name="debit"/>
+                <field name="credit"/>
+                <field name="balance"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

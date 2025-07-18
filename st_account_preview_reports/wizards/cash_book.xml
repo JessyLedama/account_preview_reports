@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_cash_book_form_custom" model="ir.ui.view">
+        <field name="name">cash.book.preview</field>
+        <field name="model">account.cash.book.report</field>
+        <field name="inherit_id" ref="base_accounting_kit.account_cash_book_form_view"/>
+        <field name="arch" type="xml">
+            <footer>
+                <xpath expr="//field/form/footer/button[@name='check_report']" position="before">
+                    <button string="Preview" name="preview_cash_book" type="object" class="btn-primary"/>
+                </xpath>
+            </footer>
+        </field>
+    </record>
+</odoo>

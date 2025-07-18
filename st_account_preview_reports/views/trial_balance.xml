@@ -1,0 +1,15 @@
+<odoo>
+    <record id="view_trial_balance_preview_line_tree" model="ir.ui.view">
+        <field name="name">trial.balance.preview.line.tree</field>
+        <field name="model">trial.balance.preview.line</field>
+        <field name="arch" type="xml">
+            <tree string="Trial Balance Preview">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="debit"/>
+                <field name="credit"/>
+                <field name="balance"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
