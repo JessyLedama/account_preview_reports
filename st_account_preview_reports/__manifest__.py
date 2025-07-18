@@ -35,6 +35,6 @@
     'installable': True,
     'application': True,
 
-    'images': ['static/description/images/icon.png'],
+    'images': ['static/description/images/pnl2.png'],
     'license': 'LGPL-3',
 }
