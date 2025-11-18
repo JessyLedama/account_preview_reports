@@ -4,11 +4,11 @@
         <field name="name">cash.flow.preview.line.tree</field>
         <field name="model">cash.flow.preview.line</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="sequence"/>
                 <field name="name"/>
                 <field name="amount"/>
-            </tree>
+            </list>
         </field>
     </record>
 </odoo>

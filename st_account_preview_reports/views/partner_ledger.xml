@@ -4,7 +4,7 @@
         <field name="name">partner.ledger.preview.line.tree</field>
         <field name="model">partner.ledger.preview.line</field>
         <field name="arch" type="xml">
-            <tree string="Partner Ledger Preview">
+            <list string="Partner Ledger Preview">
                 <field name="partner_id"/>
                 <field name="ldate"/>
                 <field name="lcode"/>
@@ -13,7 +13,7 @@
                 <field name="debit"/>
                 <field name="credit"/>
                 <field name="balance"/>
-            </tree>
+            </list>
         </field>
     </record>
 </odoo>

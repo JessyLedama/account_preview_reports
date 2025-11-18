@@ -3,7 +3,7 @@
         <field name="name">journal.audit.preview.line.tree</field>
         <field name="model">journal.audit.preview.line</field>
         <field name="arch" type="xml">
-            <tree string="Journal Audit Preview">
+            <list string="Journal Audit Preview">
                 <field name="journal_id"/>
                 <field name="move_name"/>
                 <field name="date"/>
@@ -14,7 +14,7 @@
                 <field name="credit"/>
                 <field name="currency_amount" groups="base.group_multi_currency"/>
                 <field name="currency_id" invisible="1"/>
-            </tree>
+            </list>
         </field>
     </record>
 </odoo>

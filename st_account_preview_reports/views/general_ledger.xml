@@ -4,7 +4,7 @@
         <field name="name">general.ledger.preview.line.tree</field>
         <field name="model">general.ledger.preview.line</field>
         <field name="arch" type="xml">
-            <tree string="General Ledger Preview">
+            <list string="General Ledger Preview">
                 <field name="account_code"/>
                 <field name="account_name"/>
                 <field name="ldate"/>
@@ -18,7 +18,7 @@
                 <field name="balance"/>
                 <!-- <field name="currency_code"/> -->
                 <!-- <field name="currency_amount"/> -->
-            </tree>
+            </list>
         </field>
     </record>
 </odoo>

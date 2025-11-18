@@ -4,13 +4,13 @@
         <field name="name">pnl.preview.line.tree</field>
         <field name="model">profit.and.loss</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="code"/>
                 <field name="debit"/>
                 <field name="credit"/>
                 <field name="balance"/>
-            </tree>
+            </list>
         </field>
     </record>
 </odoo>

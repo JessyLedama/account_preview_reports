@@ -3,12 +3,12 @@
         <field name="name">tax.report.preview.line.tree</field>
         <field name="model">tax.report.preview.line</field>
         <field name="arch" type="xml">
-            <tree string="Tax Report Preview">
+            <list string="Tax Report Preview">
                 <field name="type"/>
                 <field name="name"/>
                 <field name="net"/>
                 <field name="tax"/>
-            </tree>
+            </list>
         </field>
     </record>
 </odoo>

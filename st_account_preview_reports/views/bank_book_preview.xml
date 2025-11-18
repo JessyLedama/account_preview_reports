@@ -4,7 +4,7 @@
         <field name="name">bank.book.preview.line.tree</field>
         <field name="model">bank.book.preview.line</field>
         <field name="arch" type="xml">
-            <tree string="Bank Book Preview">
+            <list string="Bank Book Preview">
                 <field name="ldate"/>
                 <field name="lcode"/>
                 <field name="lname"/>
@@ -13,7 +13,7 @@
                 <field name="debit"/>
                 <field name="credit"/>
                 <field name="balance"/>
-            </tree>
+            </list>
         </field>
     </record>
 </odoo>
