@@ -3,7 +3,7 @@
     'version': '1.0',
     'category': 'Accounting',
     'summary': 'Adds Preview to Accounting Reports',
-    'author': 'SIMI Technologies',
+    'author': 'Jessy Ledama',
     'website': 'https://simitechnologies.co.ke',
     'depends': ['account', 'base_accounting_kit'],
     'data': [
